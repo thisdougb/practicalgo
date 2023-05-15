@@ -26,8 +26,8 @@ $ go run -tags dev ./...
 The web server is now running on port 8080:
 
 ```
-$ curl http://localhost:8080/myfirstendpoint/
-Hello, you've requested: /myfirstendpoint/
+$ curl http://localhost:8080/listusers/
+No users found.
 ```
 
 #### Dynamic Config
