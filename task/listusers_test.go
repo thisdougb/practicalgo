@@ -10,7 +10,7 @@ import (
 )
 
 // simple table driven test layout
-func TestListUsersTask(t *testing.T) {
+func TestGetUsers(t *testing.T) {
 
 	testCases := []struct {
 		description string // identify the test
