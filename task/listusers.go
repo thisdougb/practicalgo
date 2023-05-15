@@ -29,6 +29,18 @@ func NewListUsersTask(datastore ListUsersTaskInterface) *ListUsersTask {
 }
 
 // ----- Public Methods -----
+
+// CLI entry point
+func (t *ListUsersTask) CLI_GetUsers(debug bool) {
+
+	t.debug = debug
+	users, _ := t.getUsers()
+
+	log.Println("CLI_GetUsers(): Users:", users)
+
+}
+
+// Typically this is the webhandler entry point
 func (t *ListUsersTask) GetUsers() ([]string, error) {
 	return t.getUsers()
 }
@@ -42,5 +54,6 @@ func (t *ListUsersTask) getUsers() ([]string, error) {
 		}
 		return storedUsers, err
 	}
+
 	return storedUsers, nil
 }

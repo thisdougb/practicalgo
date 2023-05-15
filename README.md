@@ -13,7 +13,7 @@ Always a work in progress...
 
 #### Getting Started
 
-To run locally (requires Redis):
+To run as a webserver locally (requires Redis):
 
 ```
 $ go run -tags dev ./...                                                      
@@ -28,6 +28,17 @@ The web server is now running on port 8080:
 ```
 $ curl http://localhost:8080/listusers/
 No users found.
+```
+
+To run as a CLI tool:
+
+```
+ $ go run -tags dev ./... -action listusers -debug true
+2023/05/15 11:28:30 main.go:25: Version dev, built at unknown, commit none 
+2023/05/15 11:28:30 main.go:35: Datastore connecting, host: localhost:6379, username: 
+2023/05/15 11:28:30 main.go:42: Datastore connected.
+2023/05/15 11:28:30 listusers.go:38: CLI_GetUsers(): Users: []
+$
 ```
 
 #### Dynamic Config
