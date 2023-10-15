@@ -6,15 +6,16 @@ import (
 )
 
 type ChannelMessage struct {
-	TimeReceived     time.Time     `json:"time_received"` // used to log processing duration
-	Debug            bool          `json:"debug"`         // to enable per-message debug
-	Synthetic        bool          `json:"synthetic"`     // to enable per-message synthetic testing
-	idPrefix         func() string // use this to add an id into the log message
-	toRedactedJSON   func() string // use this to redact data from log messages
-	redactJSONFields func()        // use this to redact data from log messages
+	TimeReceived time.Time     `json:"time_received"` // used to log processing duration
+	Debug        bool          `json:"debug"`         // to enable per-message debug
+	Synthetic    bool          `json:"synthetic"`     // to enable per-message synthetic testing
+	idPrefix     func() string // use this to add an id into the log message
 }
 
 /*
+
+A Message type suitable for send through channels.
+It simplifies logging.
 
 Logs messages like this:
 
