@@ -5,7 +5,8 @@ import (
 	"time"
 )
 
-// An example of an entity
+// An example of an entity that is sent through channels.
+// I embed the ChannelMessage type, to get the logging functions.
 type Order struct {
 	ChannelMessage
 	ChefId  int64  `json:"chef_id"`
