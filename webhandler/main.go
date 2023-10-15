@@ -1,8 +1,6 @@
 package webhandler
 
 import (
-	"log"
-
 	"github.com/thisdougb/practicalgo/config"
 	"github.com/thisdougb/practicalgo/task"
 )
@@ -18,10 +16,6 @@ type (
 		task.ListUsersTaskInterface
 	}
 )
-
-func init() {
-	log.SetFlags(log.LstdFlags | log.Lshortfile)
-}
 
 func New(datastore Datastore) *Handler {
 	return &Handler{
